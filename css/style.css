@@ -1,0 +1,63 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  background-image: url(../img/wave.svg);
+}
+
+a {
+  color: #000000;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+a:hover {
+  color: #FF0000;
+}
+
+.mytitle {
+  text-align: center;
+  font-size: 36px;
+  margin-top: 20px;
+}
+
+#dowebok {
+  width: 90%;
+  margin: 0 auto;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 20px 0;
+}
+
+#dowebok li {
+  width: calc(30% - 20px);
+  margin-bottom: 20px;
+  border: 2px solid #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+#dowebok li:hover {
+  transform: translateY(-10px);
+}
+
+#dowebok li img {
+  width: 100%;
+  display: block;
+  border-radius: 10px 10px 0 0;
+}
+
+#dowebok li .dt {
+  padding: 10px;
+  text-align: center;
+  background-color: #fff;
+}
