@@ -19,37 +19,93 @@
 			opacity: 1;
 			transform: translateY(0);
 		}
+
+		/* 左侧菜单栏样式 */
+		#sidebar {
+			position: fixed;
+			top: 0;
+			left: 0;
+			height: 100%;
+			width: 200px;
+			background-color: #f0f0f0;
+			padding: 20px;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+		}
+
+		#sidebar ul {
+			list-style: none;
+			padding: 0;
+			margin: 0;
+		}
+
+		#sidebar ul li {
+			margin-bottom: 10px;
+		}
+
+		#sidebar ul li a {
+			display: block;
+			color: #333;
+			text-decoration: none;
+			padding: 5px;
+			border-radius: 5px;
+			transition: background-color 0.3s;
+		}
+
+		#sidebar ul li a:hover {
+			background-color: #ddd;
+		}
 	</style>
 </head>
 
 <body>
-	<h1 class="mytitle"></h1>
-	<ul id="dowebok">
-		<li>
-			<div><a href="../class3/js1.html"><img data-original="img/tibet-1.jpg" src="img/tibet-1.jpg" alt="图片1"></a></div>
-			<div class="dt"><a href="../class3/js1.html">作品1：使用函数自定义打印三角形，平行四边形行数</a></div>
-		</li>
-		<li>
-			<div><img data-original="img/tibet-2.jpg" src="img/tibet-2.jpg" alt="图片2"></div>
-			<div class="dt">作品2：普通网页布局展示</div>
-		</li>
-		<li>
-			<div><img data-original="img/tibet-1.jpg" src="img/tibet-1.jpg" alt="图片1"></div>
-			<div class="dt">作品1：普通网页布局展示</div>
-		</li>
-		<li>
-			<div><img data-original="img/tibet-2.jpg" src="img/tibet-2.jpg" alt="图片2"></div>
-			<div class="dt">作品2：普通网页布局展示</div>
-		</li>
-		<li>
-			<div><img data-original="img/tibet-1.jpg" src="img/tibet-1.jpg" alt="图片1"></div>
-			<div class="dt">作品1：普通网页布局展示</div>
-		</li>
-		<li>
-			<div><img data-original="img/tibet-2.jpg" src="img/tibet-2.jpg" alt="图片2"></div>
-			<div class="dt">作品2：普通网页布局展示</div>
-		</li>
-	</ul>
+	<!-- 左侧菜单栏 -->
+	<div id="sidebar">
+		<ul>
+			<li><a href="../class3/js1.html">作品1</a></li>
+			<li><a href="../class4/experiment.html">作品2</a></li>
+			<li><a href="../class6/experiment.html">作品3</a></li>
+		</ul>
+	</div>
+
+	<div style="margin-left: 220px;"> <!-- 保证内容在菜单栏的右侧显示 -->
+		<h1 class="mytitle"></h1>
+		<ul id="dowebok">
+			<li>
+				<div><a href="../class3/js1.html"><img data-original="img/tibet-1.jpg" src="img/tibet-1.jpg" alt="图片1"></a>
+				</div>
+				<div class="dt"><a href="../class3/js1.html">作品1：使用函数自定义打印三角形，平行四边形行数</a></div>
+			</li>
+
+			<li>
+				<div><a href="../class4/experiment.html"><img data-original="img/tibet-2.jpg" src="img/tibet-2.jpg"
+							alt="图片2"></a>
+				</div>
+				<div class="dt"><a href="../class4/experiment.html">作品2：函数的打印</a></div>
+			</li>
+
+			<li>
+				<div><a href="../class6/experiment.html"><img data-original="img/tibet-1.jpg" src="img/tibet-1.jpg"
+							alt="图片1"></a>
+				</div>
+				<div class="dt"><a href="../class6/experiment.html">作品3：JavaScript常用对象的应用</a></div>
+			</li>
+
+			<li>
+				<div><img data-original="img/tibet-2.jpg" src="img/tibet-2.jpg" alt="图片2"></div>
+				<div class="dt">作品2：普通网页布局展示</div>
+			</li>
+
+			<li>
+				<div><img data-original="img/tibet-1.jpg" src="img/tibet-1.jpg" alt="图片1"></div>
+				<div class="dt">作品1：普通网页布局展示</div>
+			</li>
+
+			<li>
+				<div><img data-original="img/tibet-2.jpg" src="img/tibet-2.jpg" alt="图片2"></div>
+				<div class="dt">作品2：普通网页布局展示</div>
+			</li>
+		</ul>
+	</div>
 
 	<script type="text/javascript" src="./js/animat.js"></script>
 </body>
