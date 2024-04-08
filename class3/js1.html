@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    //使用函数自定义打印三角形
+    let row = prompt("输入要打印的行数")
+    if (row == null) {
+      history.back();//使用history.back()函数返回此次浏览的上一页
+      //history.forward();//与history.banck()函数相反
+      //history.go(-1);
+
+    }
+    function sanjiaoxing(row) {
+      for (let i = 0; i < row; i++) {
+        //打印空格
+        for (space = 1; space < row - i; space++) {
+          document.write("&nbsp;&nbsp");
+        }
+        //打印*号
+        for (column = 0; column <= i; column++) {
+          document.write("*&nbsp;&nbsp;");
+        }
+        document.write("<br>");
+      }
+    }
+    sanjiaoxing(row)
+
+
+    //使用函数自定义打印平行四边形
+    // 定义行、列和空格的变量
+    function pingxing(row) {
+      for (let k = 1; k <= row; k++) {
+        // 打印前导空格
+        for (let space = row; space > k; space--) {
+          document.write("&nbsp;&nbsp;");
+        }
+        // 打印星号
+        for (let column = 0; column < row; column++) {
+          document.write("*&nbsp;&nbsp;");
+        }
+        // 换行
+        document.write("<br>");
+      }
+    }
+    pingxing(row)
+  </script>
+</body>
+
+</html>

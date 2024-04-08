@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>js打印图形</title>
+</head>
+
+<body>
+  <script>
+    //219970537 曾宏伟
+    //打印三角形
+    let row, column, space;
+    for (row = 0; row < 5; row++) {
+      //打印空格
+      for (space = 0; space < 4 - row; space++) {
+        document.write("&nbsp;&nbsp");
+      }
+      //打印*号
+      for (column = 0; column <= row; column++) {
+        document.write("*&nbsp;&nbsp;");
+      }
+      document.write("<br>");
+    }
+  </script>
+
+  <script>
+    //219970537 曾宏伟
+    // 打印平行四边形
+    // 定义行、列和空格的变量
+    let numRows = 5; // 平行四边形的行数
+    for (let row = 0; row < numRows; row++) {
+      // 打印前导空格
+      for (let space = 4; space > row; space--) {
+        document.write("&nbsp;&nbsp;");
+      }
+      // 打印星号
+      for (let column = 0; column < numRows; column++) {
+        document.write("*&nbsp;&nbsp;");
+      }
+      // 换行
+      document.write("<br>");
+    }
+  </script>
+
+
+  <script>
+
+    //219970537 曾宏伟
+    // 打印对称的菱形
+    // 定义行、列和空格的变量
+    let num = 5; // 菱形的行数
+    let halfRows = Math.ceil(numRows / 2);//对称的地方
+
+    // 上半部分
+    for (let row = 0; row < halfRows; row++) {
+      // 打印前导空格
+      for (let space = 0; space < halfRows - row - 1; space++) {
+        document.write("&nbsp;&nbsp;&nbsp;");
+      }
+      // 打印星号
+      for (let column = 0; column < 2 * row + 1; column++) {
+        document.write("*&nbsp;&nbsp;");
+      }
+      // 换行
+      document.write("<br>");
+    }
+
+    // 下半部分
+    for (let row = halfRows - 2; row >= 0; row--) {
+      // 打印前导空格
+      for (let space = 0; space < halfRows - row - 1; space++) {
+        document.write("&nbsp;&nbsp;&nbsp;");
+      }
+      // 打印星号
+      for (let column = 0; column < 2 * row + 1; column++) {
+        document.write("*&nbsp;&nbsp;");
+      }
+      // 换行
+      document.write("<br>");
+    }
+  </script>
+
+
+
+
+</body>
+
+</html>

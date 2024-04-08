@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    //1.219970537 曾宏伟
+    //(1.)Number()
+    console.log(Number(true), Number(null), +undefined);//Number函数,+对数据进行强转为数值为数值类型，对于非定义的数据类型强转则为NaN
+    //(2.)Boolean()
+    console.log(Boolean('100'), Boolean(100), Boolean(null), !!undefined);//Boolean()对数据进行强转时，
+    //除了0，null，undefined，其他都是false，包括字符串
+    //(3.)parseInt()
+    console.log(parseInt(123.6), parseInt(0b1011011), parseInt(0x2A), parseInt(0x2A, 8));
+    //parseInt()函数中的radix参数，表示被解析字符串的基数（2~36的数），
+    //比如0x2A,如果后面没传基数，parseInt()函数默认根据需转换的数值表示，这里就是16进制，后面跟8就是8进制数
+    //(4.parseFloat())
+    console.log(parseFloat('123.6'), parseFloat('100px'), parseFloat(0o10));//传入string，解析为浮点数的值,
+    //对于传入进制的数据，parseFloat()不能解析，默认为转换为十进制数
+    //5.eval()
+    console.log(eval('87*99+2'));//用来执行字符串表达式
+    //6.isNaN()
+    console.log(isNaN(null), isNaN('123'), isNaN('abc'), isNaN('a1b2c3'));//判断是否是数据型的数据
+
+    console.log('------------------');
+
+
+    //2.219970537 曾宏伟
+    //(1.)运行以下代码，查看运行结果
+    var arr1 = []
+    console.log(arr1, arr1.length);
+    var arr2 = [1, 2, 3]
+    console.log(arr2[0], arr2.length);
+    var arr3 = new Array();
+    console.log(arr3[1], arr3.length);
+    //(2.)将数组arr2中的第一个值去掉
+    arr2.splice(0, 1)//左闭右开原则
+    console.log(arr2);
+
+    console.log('-----------');
+
+    //3.219970537 曾宏伟
+    var mydate = new Date();
+    console.log(mydate.getHours() + ":" + mydate.getMinutes());
+
+    console.log("-------------");
+
+    //4.219970537 曾宏伟
+    //(1.)
+    var reg1 = /^\d{4}$/
+    console.log(reg1.test('1234'), reg1.test('1a34'), reg1.test('12345'));
+    //(2.)
+    var reg2 = new RegExp("^[sp]\\d{1,4}&", "i")
+    console.log(reg2.test('p123'), reg2.test('1234'), reg2.test('S10'));
+    //(3.)
+    function telepheNumber(phoneNumber) {
+      var reg3 = /^(?:\+86)?1(?:3[3]|4[9]|53|7[37]|8[019]|9[18])\d{8}$/;
+      if (reg3.test(phoneNumber)) {
+        console.log("是电信手机号码");
+      } else {
+        console.log("不是");
+      }
+    }
+    telepheNumber(13822220000)
+
+    console.log("------------");
+
+
+    //219970537 曾宏伟
+    //5.字符串截取
+    var Str = "231545612@qq.com"
+    var n = Str.indexOf("@")
+    //console.log(n);
+    console.log(Str.substring(0, n));//进行字符串截取时，首先获取@在字符串首次出现的位置（这是qq号码与后面部分的重大分隔），获取出的位置会少1，
+    //第一个字符下标是从0开始，有了初始位置和分割位置，截取想要的字符串可用函数substring()
+
+    console.log("------------");
+
+    //6.Math对象,编写代码随机产生1,2,3中的任意一个数
+    var num = Math.floor((Math.random() * 3) + 1);
+    console.log(num);
+    console.log("-----------");
+
+
+    //219970537 曾宏伟
+    //7.思考以下代码，进行验证
+    var x = 1
+    function A(y) {
+      var x = 2
+      function B(z) {
+        console.log(x + y + z);
+      }
+      return B
+    }
+    var c = A(2)
+    c(3)
+    //B函数执行完毕后，返回B函数给A，A赋给c，也就是c调用B函数，3+2+2
+  </script>
+</body>
+
+</html>

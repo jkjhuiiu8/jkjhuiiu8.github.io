@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    //ES6新特性
+    //使用解构赋值实现两数互换
+    let a = 1;
+    let b = 2;
+    [a, b] = [b, a];
+    console.log(a);
+
+    //使用解构赋值实现对象
+    let mao = {
+      name: "阿萨德",
+      age: 1,
+      weight: 20
+    };
+    let { name, age, weight } = mao;
+    console.log(name, age, weight);
+
+    //使用模版字符串拼接出"你好，xx，今天是星期xx"
+    let myName = "张三";
+    let j = "二";
+    console.log(`你好，${myName},今天是星期${j}`);
+
+    //用for..of实现数组遍历
+    let arrs = [1, 2, 3, 4, 6];
+    for (let temp of arrs) {
+      console.log(temp);
+    }
+
+    console.log(arrs.forEach());
+
+
+  </script>
+</body>
+
+</html>

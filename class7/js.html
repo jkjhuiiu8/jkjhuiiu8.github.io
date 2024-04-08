@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    //字面量方式创建一个对象
+    let mao = {
+      name: "阿萨斯多",
+      sex: 1,
+      age: 5,
+      eat: function () {
+        console.log("吃饭");
+      }
+    }
+    console.log(mao.age, mao.sex, mao.name);
+    mao.eat();
+
+    console.log("-------------");
+
+    //用object对象创建猫对象
+    let mao1 = new Object;
+    mao1.name = "阿萨德"
+    mao1.age = 4
+    mao1.sex = 0
+    mao1.walk = function () {
+      console.log("散步！");
+    }
+    mao1.walk()
+    console.log(mao1.name, mao1.age, mao1.sex);
+
+    //用工厂模式创建这只猫
+    function creatMao(name, age, sex, walk) {
+      var tempMao = new Object()
+      tempMao.name = name
+      tempMao.age = age
+      tempMao.sex = sex
+      tempMao.walk = walk
+      return tempMao
+    }
+    var mao2 = creatMao("啊飒飒的", 6, 0, new Function("console.log('跑步！')"))
+    console.log(mao2.name);
+    mao2.walk()
+
+    //使用构造函数创建
+    function mao3(name, age, sex, walk) {
+      this.name = name
+      this.age = age
+      this.sex = sex
+      this.walk = walk
+      this.run = function () {
+        console.log(this.name + "猫叫");
+      }
+    }
+    var obj3 = new mao3("爱仕达", 4, 0, new Function("console.log('散步！')"))
+    console.log(obj3);
+    obj3.walk()
+    obj3.run()
+
+    console.log("-------------");
+
+    //经典组合：构造函数加上原型模式
+    function mao4(name, age, sex) {
+      this.name = name
+      this.age = age
+      this.sex = sex
+    }
+    mao4.prototype.run = function () {
+      console.log(this.name + "唱跳rap！");
+    }
+    let obj4 = new mao4("阿斯达所多", 2, 1)
+    console.log(obj4);
+    obj4.run();
+  </script>
+</body>
+
+</html>

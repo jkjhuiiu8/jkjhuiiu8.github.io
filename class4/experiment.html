@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    //219970537 曾宏伟
+    //1.编写代码调用以下函数
+    function getSum(num1, num2) {
+      var sum = num1 + num2
+      console.log(num1 + "+" + num2 + "=" + (num1 + num2))
+    }
+    getSum(1, 2)
+    console.log("---------------");
+
+    //2.运行以下代码，如果运行正确则记录运行结果；如果错误，则修改代码，记录错误原因
+    //getProduct(2, 4) //错误原因，使用变量式创建函数，在调用时要放在下面
+    var getProduct = function (num1, num2) {
+      console.log(num1 + "*" + num2 + "=" + num1 * num2);
+    }
+    getProduct(2, 4)
+    console.log("---------------");
+
+    //3.阅读下面代码
+    var a = 100
+    function test() {
+      console.log(a);
+      a = 10
+      console.log(a);
+    }
+    test()
+    console.log(a);//变量拥有全局作用域，函数内部更新a的值，a会改变，调用函数a的值为10，以及输出a时，值也为10
+    console.log("---------------");
+
+    //219970537 曾宏伟
+    //4.阅读如下代码
+    var a = 10;
+    fun1()
+    function fun1() {
+      var b = 20
+      console.log(a);
+      console.log(b);
+      var a = 10 //函数内部，变量a提升，但赋给a的值不会提升。
+    }
+    console.log("---------------");
+
+    //5.运行以下代码,看看是否报错？
+    function fun2(a, b) {
+      console.log(arguments[0]);
+      console.log(arguments[1]);
+      console.log(arguments[2]);
+    }
+    fun2(1, 2, 3)
+    console.log("---------------");
+
+    //6.用for....in循环语句，打印输出fun2调用时的参数
+    function fun3(a, b) {
+      // console.log(arguments[0]);
+      // console.log(arguments[1]);
+      // console.log(arguments[2]);
+      for (var i in arguments) {
+        console.log(arguments[i]);
+      }
+    }
+    fun3(1, 8, 1)
+    console.log("---------------");
+  </script>
+
+
+  <script>
+    //219970537 曾宏伟
+    //7.运行如下代码，并记录输出结果和原因
+    "use strict";
+    num = 100;
+    //无输出结果，num报错，原因为num未定义
+  </script>
+</body>
+
+</html>

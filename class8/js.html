@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    //this在当前函数内部，全局调用此函数时，this的值为window，如果在对象内部，则指向对象所在的位置
+    // function fun() {
+    //   console.log(this);
+    // }
+    // var obj = {
+    //   name: 'hello',
+    //   f: fun
+    // }
+    // obj.f()
+
+    // function fun1() {
+    //   //console.log("abc");
+    // }
+    // var f = new fun1();
+    // console.log(f);
+
+
+    //组合继承(伪经典继承)
+
+    //1.
+    var animal = {
+      name: "喵喵",
+      age: 2,
+    }
+    var mao = Object.create(animal)//使用Object.create创建对象继承原型对象的属性和方法
+    console.log(mao.name, mao.age);
+
+    //2.
+    function animal(name, age) {
+      this.age = age
+      this.name = name
+    }
+
+  </script>
+</body>
+
+</html>

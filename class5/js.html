@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    var fun1 = function () {
+      var num = 100
+    }
+    var fun2 = fun1
+    console.log(fun1 == fun2, fun1 === fun2);
+  </script>
+
+  <script>
+    name = "lwy"
+    function t() {
+      var name = "tlwy"
+      function s() {
+        var name = "slwy"
+        console.log(name);
+      }
+      function ss() {
+        console.log(name);
+      }
+      s()
+      ss()
+    }
+    t()
+  </script>
+</body>
+
+</html>
