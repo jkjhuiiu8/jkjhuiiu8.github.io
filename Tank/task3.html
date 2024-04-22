@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<title>让坦克开起来</title>
+	<style type="text/css">
+		input {
+			font-size: 26px;
+			margin-top: 20px;
+		}
+
+		body {
+			background-image: url("images/grassland.png");
+		}
+
+		#mytank {
+			position: absolute;
+			left: 10px;
+			top: 100px
+		}
+
+		#startButton {
+			height: 80px;
+		}
+	</style>
+</head>
+
+<body>
+	<img id="mytank" src="images/right.png" />
+
+	<button id="startButton">开始游戏（w前进,s后退，w向上,s向下）</button>
+	<script>
+		// 编写代码，让坦克能上下左右移动
+
+		//获取tank元素，body元素
+		let tank = document.querySelector("#mytank");
+		let body = document.querySelector("body");
+
+
+		//获取该tank样式
+		let cssLeft = parseInt(window.getComputedStyle(tank, null).left)   //获取的该css样式对象，只能只读，不能修改,通过对象.属性获取属性值
+		let cssTop = parseInt(window.getComputedStyle(tank, null).top)
+
+		//给body设置一个高度
+		body.style.height = "760px";
+
+		//定义一个游戏开始的标志
+		let startGame = false;
+
+		//给游戏开始设置一个监听事件
+		document.getElementById("startButton").addEventListener("click", function () {
+			//说明游戏未开始
+			if (startGame) {
+				return;
+			}
+			//游戏开始后，禁用开始游戏的标志
+			startGame = true;
+			document.getElementById("startButton").disabled = true;
+
+			window.addEventListener("keypress", function (e) {
+				console.log(e.key);
+				//获取图片固有宽度像素和高度像素(待图片加载完成才行，设置在一个监听事件下确保该tank事件发生)
+				let tankx = tank.naturalWidth;
+				let tanky = tank.naturalHeight;
+
+				//获取整块画布高度和宽度像素
+				let bodyx = body.offsetWidth;
+				let bodyy = body.offsetHeight;
+
+
+				//console.log(tankx, tanky, bodyx, bodyy);
+
+				//定义按键
+				switch (e.key) {
+					//向右前进
+					case "d":
+						if (cssLeft <= (bodyx - tankx)) {
+							tank.style.transform = `rotate(0deg)`;
+							cssLeft += 5;
+							tank.style.left = cssLeft + 'px';
+						}
+						break;
+
+					//向左前进
+					case "a":
+						if (cssLeft > 0 && cssLeft <= (bodyx - tankx) + 5) {
+							tank.style.transform = 'rotate(180deg)';
+							cssLeft -= 5;
+							tank.style.left = cssLeft + 'px';
+						}
+						break;
+
+					//向下前进
+					case "s":
+						if (cssTop <= (bodyy - tanky)) {
+							tank.style.transform = 'rotate(90deg)';
+							cssTop += 5;
+							tank.style.top = cssTop + 'px';
+						}
+						break;
+
+					//向上前进
+					case "w":
+						if (cssTop > 0 && cssTop <= (bodyy - tanky) + 5) {
+							tank.style.transform = 'rotate(270deg)';
+							cssTop -= 5;
+							tank.style.top = cssTop + 'px';
+						}
+						break;
+				}
+			})
+		}
+		)
+		//阻止右击浏览器默认行为
+		window.addEventListener("contextmenu", (e) =>
+			e.preventDefault());
+	</script>
+</body>
+
+</html>
